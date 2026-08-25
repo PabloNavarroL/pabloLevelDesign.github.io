@@ -8,7 +8,7 @@ A static site — plain HTML/CSS/JS, no build step, no dependencies. Free to hos
 index.html                  Homepage — hero, project grid, about teaser, contact
 about.html                  Full bio / background / favorites
 projects/facility.html      Case study — The Facility
-projects/scrap-mechanic.html Case study — Scrap Mechanic (needs real content)
+scrap-mechanic/index.html   Case study — Scrap Mechanic (needs real content), served at /scrap-mechanic/
 projects/ld-studies.html    Case study — Tenebrosity & Post Drone
 css/style.css               All styling — one file, uses CSS custom properties
 js/nav.js                   Mobile nav toggle
