@@ -643,7 +643,7 @@ p:last-child { margin-bottom: 0; }
 
 .contribution-list > li { margin-bottom: 26px; }
 .contribution-list > li:last-child { margin-bottom: 0; }
-.contribution-list > li > strong { display: inline-block; font-size: 17px; margin-bottom: 8px; }
+.category-label { display: inline-block; font-size: 17px; margin-bottom: 8px; color: var(--accent); }
 .framed.centered ul ul {
   list-style-type: circle;
   margin: 4px 0 0;
