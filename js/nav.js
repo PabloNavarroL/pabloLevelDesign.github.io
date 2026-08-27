@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       dot.type = 'button';
       dot.setAttribute('aria-label', `Go to image ${i + 1}`);
       dot.addEventListener('click', () => {
-        track.scrollTo({ left: slides[i].offsetLeft, behavior: 'smooth' });
+        goTo(i);
       });
       dotsWrap.appendChild(dot);
       return dot;
@@ -53,6 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
       return closest;
     };
 
+    // Update immediately on click (doesn't depend on the scroll event
+    // firing reliably during a smooth-scroll animation), and also sync
+    // passively so manual swipe/drag keeps the dots in sync too.
+    function goTo(index) {
+      setActive(index);
+      track.scrollTo({ left: slides[index].offsetLeft, behavior: 'smooth' });
+    }
+
     let scrollTimer;
     track.addEventListener('scroll', () => {
       clearTimeout(scrollTimer);
@@ -60,12 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     prevBtn && prevBtn.addEventListener('click', () => {
-      const i = Math.max(0, currentIndex() - 1);
-      track.scrollTo({ left: slides[i].offsetLeft, behavior: 'smooth' });
+      goTo(Math.max(0, currentIndex() - 1));
     });
     nextBtn && nextBtn.addEventListener('click', () => {
-      const i = Math.min(slides.length - 1, currentIndex() + 1);
-      track.scrollTo({ left: slides[i].offsetLeft, behavior: 'smooth' });
+      goTo(Math.min(slides.length - 1, currentIndex() + 1));
     });
 
     setActive(0);
