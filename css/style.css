@@ -20,7 +20,7 @@
   --accent:        #e8a33d;
   --accent-dim:    #b67f2c;
   --accent-soft:   rgba(232, 163, 61, 0.12);
-  --accent-2:      #e8a33d; /* secondary accent, text emphasis only (not headers) — placeholder until real hex is set */
+  --accent-2:      #DDD7D7; /* secondary accent, text emphasis only (not headers) */
   --status-shipped:#6fbe8f;
   --status-proto:  #e8a33d;
   --status-team:   #6f9abe;
