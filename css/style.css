@@ -568,7 +568,7 @@ p:last-child { margin-bottom: 0; }
    1160px column for the rail to pin near the browser's true left
    edge without overlapping the text. */
 @media (min-width: 1530px) {
-  .project-body .wrap { grid-template-columns: 1fr; }
+  .project-body .prose { grid-column: 1 / -1; }
   .project-body .rail {
     position: fixed;
     left: var(--gutter);
