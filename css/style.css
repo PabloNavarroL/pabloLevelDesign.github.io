@@ -628,8 +628,15 @@ p:last-child { margin-bottom: 0; }
 @media (max-width: 560px) { .framed { padding: 28px 24px; } }
 
 .framed.centered { text-align: center; }
-.framed.centered ul { list-style-position: inside; padding-left: 0; margin-left: auto; margin-right: auto; }
+.framed.centered ul {
+  list-style-position: inside;
+  padding-left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left; /* the list block sits centered on the page; the bullet text itself reads left-to-right */
+}
 .framed.centered p { margin-left: auto; margin-right: auto; }
+.framed.centered h2 { font-weight: 800; }
 .prose ul { color: var(--text-muted); padding-left: 20px; max-width: 68ch; }
 .prose li { margin-bottom: 8px; }
 .prose li ul { margin-top: 8px; }
