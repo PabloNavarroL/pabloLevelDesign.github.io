@@ -670,7 +670,7 @@ p:last-child { margin-bottom: 0; }
 
 /* Thumbnail that links out to YouTube instead of embedding — for
    videos with embedding disabled by their owner. */
-.video-link { display: block; }
+.video-link { display: block; position: absolute; inset: 0; }
 .play-button {
   position: absolute;
   top: 50%; left: 50%;
