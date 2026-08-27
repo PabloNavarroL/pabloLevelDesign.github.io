@@ -545,8 +545,14 @@ p:last-child { margin-bottom: 0; }
 .project-body {
   padding: 72px 0;
 }
-@media (max-width: 780px) { .project-body .wrap { grid-template-columns: 1fr; gap: 24px; } }
 
+/* Default (and the common desktop range, 781–1529px): rail sits
+   in-column next to the prose, as a sticky sidebar. */
+.project-body .wrap {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 56px;
+}
 .project-body .rail {
   font-family: var(--f-mono);
   font-size: 11px;
@@ -556,6 +562,24 @@ p:last-child { margin-bottom: 0; }
   position: sticky;
   top: 100px;
   align-self: start;
+}
+
+/* Only on wide monitors is there enough margin outside the centered
+   1160px column for the rail to pin near the browser's true left
+   edge without overlapping the text. */
+@media (min-width: 1530px) {
+  .project-body .wrap { grid-template-columns: 1fr; }
+  .project-body .rail {
+    position: fixed;
+    left: var(--gutter);
+    top: 100px;
+    width: 160px;
+  }
+}
+
+@media (max-width: 780px) {
+  .project-body .wrap { grid-template-columns: 1fr; gap: 24px; }
+  .project-body .rail { position: static; }
 }
 
 .prose h2 {
