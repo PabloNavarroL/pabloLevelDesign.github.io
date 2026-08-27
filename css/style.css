@@ -20,6 +20,7 @@
   --accent:        #e8a33d;
   --accent-dim:    #b67f2c;
   --accent-soft:   rgba(232, 163, 61, 0.12);
+  --accent-2:      #e8a33d; /* secondary accent, text emphasis only (not headers) — placeholder until real hex is set */
   --status-shipped:#6fbe8f;
   --status-proto:  #e8a33d;
   --status-team:   #6f9abe;
@@ -638,7 +639,7 @@ p:last-child { margin-bottom: 0; }
 .framed.centered p { margin-left: auto; margin-right: auto; }
 .framed.centered h2 { font-weight: 800; }
 
-.accent-text { color: var(--accent); }
+.accent-text { color: var(--accent-2); }
 
 .contribution-list > li { margin-bottom: 26px; }
 .contribution-list > li:last-child { margin-bottom: 0; }
