@@ -579,6 +579,28 @@ p:last-child { margin-bottom: 0; }
 .shot-grid.full { grid-template-columns: 1fr; }
 .shot-grid img { border: 1px solid var(--line); }
 
+.summary-media {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: start;
+}
+@media (max-width: 780px) {
+  .summary-media { grid-template-columns: 1fr; gap: 20px; }
+}
+.summary-media .media {
+  border: 1px solid var(--line);
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  position: relative;
+}
+.summary-media .media img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Drop-in responsive container for a YouTube/Vimeo <iframe> embed —
+   replace the .media img with an iframe wrapped in this class. */
+.video-embed { position: relative; aspect-ratio: 16/9; }
+.video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
 figcaption, .caption {
   font-family: var(--f-mono);
   font-size: 11.5px;
