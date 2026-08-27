@@ -574,14 +574,17 @@ p:last-child { margin-bottom: 0; }
   border-left: 2px solid transparent;
   transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
 }
+.rail-nav a::before { content: "– "; }
 .rail-nav a:hover {
   color: var(--accent);
   border-left-color: var(--accent);
   background: var(--bg-panel);
 }
 
-/* Keeps jumped-to sections clear of the sticky header. */
-.framed[id] { scroll-margin-top: 96px; }
+/* Keeps jumped-to sections clear of the sticky header, with real
+   breathing room so the h2 title is fully visible, not just clear
+   of the header's bottom edge. */
+.framed[id] { scroll-margin-top: 150px; }
 
 /* Only on wide monitors is there enough margin outside the centered
    1160px column for the rail to pin near the browser's true left
