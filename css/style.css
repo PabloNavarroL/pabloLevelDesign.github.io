@@ -563,6 +563,25 @@ p:last-child { margin-bottom: 0; }
   top: 100px;
   align-self: start;
 }
+.rail-title { margin-bottom: 14px; }
+.rail-nav { display: flex; flex-direction: column; gap: 4px; }
+.rail-nav a {
+  display: block;
+  padding: 7px 10px;
+  margin-left: -10px;
+  color: var(--text-faint);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.rail-nav a:hover {
+  color: var(--accent);
+  border-left-color: var(--accent);
+  background: var(--bg-panel);
+}
+
+/* Keeps jumped-to sections clear of the sticky header. */
+.framed[id] { scroll-margin-top: 96px; }
 
 /* Only on wide monitors is there enough margin outside the centered
    1160px column for the rail to pin near the browser's true left
