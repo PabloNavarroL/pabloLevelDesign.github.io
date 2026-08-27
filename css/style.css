@@ -593,6 +593,7 @@ p:last-child { margin-bottom: 0; }
   margin: 36px 0 14px;
 }
 .prose p { font-size: 16.5px; max-width: 68ch; }
+.summary-copy p { max-width: none; font-size: 19px; color: var(--text); }
 .prose ul { color: var(--text-muted); padding-left: 20px; max-width: 68ch; }
 .prose li { margin-bottom: 8px; }
 .prose li ul { margin-top: 8px; }
