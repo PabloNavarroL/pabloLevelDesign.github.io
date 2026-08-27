@@ -637,6 +637,16 @@ p:last-child { margin-bottom: 0; }
 }
 .framed.centered p { margin-left: auto; margin-right: auto; }
 .framed.centered h2 { font-weight: 800; }
+
+.accent-text { color: var(--accent); }
+
+.contribution-list > li { margin-bottom: 26px; }
+.contribution-list > li:last-child { margin-bottom: 0; }
+.contribution-list > li > strong { display: inline-block; font-size: 17px; margin-bottom: 8px; }
+.framed.centered ul ul {
+  list-style-type: circle;
+  margin: 4px 0 0;
+}
 .prose ul { color: var(--text-muted); padding-left: 20px; max-width: 68ch; }
 .prose li { margin-bottom: 8px; }
 .prose li ul { margin-top: 8px; }
