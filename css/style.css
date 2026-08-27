@@ -566,9 +566,14 @@ p:last-child { margin-bottom: 0; }
   margin: 48px 0 18px;
 }
 .prose h2:first-child { margin-top: 0; }
+.prose h3 {
+  font-size: 17px;
+  margin: 32px 0 12px;
+}
 .prose p { font-size: 16.5px; max-width: 68ch; }
 .prose ul { color: var(--text-muted); padding-left: 20px; max-width: 68ch; }
 .prose li { margin-bottom: 8px; }
+.prose li ul { margin-top: 8px; }
 
 .shot-grid {
   display: grid;
@@ -579,27 +584,32 @@ p:last-child { margin-bottom: 0; }
 .shot-grid.full { grid-template-columns: 1fr; }
 .shot-grid img { border: 1px solid var(--line); }
 
-.summary-media {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 40px;
-  align-items: start;
-}
-@media (max-width: 780px) {
-  .summary-media { grid-template-columns: 1fr; gap: 20px; }
-}
-.summary-media .media {
-  border: 1px solid var(--line);
-  aspect-ratio: 16/9;
-  overflow: hidden;
-  position: relative;
-}
-.summary-media .media img { width: 100%; height: 100%; object-fit: cover; }
-
 /* Drop-in responsive container for a YouTube/Vimeo <iframe> embed —
-   replace the .media img with an iframe wrapped in this class. */
+   replace the .media img with an iframe wrapped in this class. Only
+   works if the video owner allows embedding (YouTube error 153 means
+   they don't — use .video-link below instead in that case). */
 .video-embed { position: relative; aspect-ratio: 16/9; }
 .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* Thumbnail that links out to YouTube instead of embedding — for
+   videos with embedding disabled by their owner. */
+.video-link { display: block; }
+.play-button {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  padding-left: 4px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.video-link:hover .play-button { background: var(--accent); transform: translate(-50%, -50%) scale(1.08); }
 
 figcaption, .caption {
   font-family: var(--f-mono);
