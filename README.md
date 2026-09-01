@@ -12,7 +12,7 @@ scrap-mechanic/index.html   Case study — Scrap Mechanic (needs real content), 
 projects/ld-studies.html    Case study — Tenebrosity & Post Drone
 css/style.css               All styling — one file, uses CSS custom properties
 js/nav.js                   Mobile nav toggle
-images/                     Placeholder SVGs — replace these with real screenshots
+images/                     Organized per project: about/, facility/, ld-studies/, scrap-mechanic/
 ```
 
 ## Things still marked `needs-edit`
