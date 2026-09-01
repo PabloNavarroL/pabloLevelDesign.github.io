@@ -537,7 +537,7 @@ p:last-child { margin-bottom: 0; }
 .hero-media {
   margin-top: 48px;
   border: 1px solid var(--line-strong);
-  aspect-ratio: 16/8;
+  aspect-ratio: 16/9;
   overflow: hidden;
   position: relative;
 }
