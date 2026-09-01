@@ -644,6 +644,9 @@ p:last-child { margin-bottom: 0; }
 .contribution-list > li { margin-bottom: 26px; }
 .contribution-list > li:last-child { margin-bottom: 0; }
 .category-label { display: inline-block; font-size: 17px; margin-bottom: 8px; color: var(--accent); }
+/* Highlights reuses .category-label inline, mid-sentence — unlike Contribution's
+   own-line usage, so it needs plain inline flow, not block spacing. */
+#highlights .category-label { display: inline; margin-bottom: 0; font-size: inherit; }
 .framed.centered ul ul {
   list-style-type: circle;
   margin: 4px 0 0;
