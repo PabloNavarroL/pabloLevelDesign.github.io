@@ -586,6 +586,7 @@ p:last-child { margin-bottom: 0; }
    breathing room so the h2 title is fully visible, not just clear
    of the header's bottom edge. */
 .framed[id] { scroll-margin-top: 150px; }
+h3[id] { scroll-margin-top: 150px; }
 
 /* Only on wide monitors is there enough margin outside the centered
    1160px column for the rail to pin near the browser's true left
@@ -703,6 +704,7 @@ figcaption, .caption {
 }
 
 .slider { position: relative; margin: 28px 0; }
+.slider.small { max-width: 420px; margin-left: auto; margin-right: auto; }
 .slider-track {
   display: flex;
   overflow-x: auto;
