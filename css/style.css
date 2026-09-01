@@ -667,6 +667,9 @@ p:last-child { margin-bottom: 0; }
    they don't — use .video-link below instead in that case). */
 .video-embed { position: relative; aspect-ratio: 16/9; }
 .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Nested inside .hero-media, match its box exactly instead of the
+   embed's own 16/9 default (hero-media uses 16/8), so nothing clips. */
+.hero-media .video-embed { position: absolute; inset: 0; aspect-ratio: auto; }
 
 /* Thumbnail that links out to YouTube instead of embedding — for
    videos with embedding disabled by their owner. */
