@@ -663,6 +663,7 @@ p:last-child { margin-bottom: 0; }
 }
 .shot-grid.full { grid-template-columns: 1fr; }
 .shot-grid img { border: 1px solid var(--line); }
+.shot-grid video { width: 100%; border: 1px solid var(--line); display: block; background: #000; }
 
 /* Drop-in responsive container for a YouTube/Vimeo <iframe> embed —
    replace the .media img with an iframe wrapped in this class. Only
