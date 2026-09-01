@@ -716,6 +716,7 @@ figcaption, .caption {
   scroll-snap-align: start;
 }
 .slider-track img { width: 100%; border: 1px solid var(--line); display: block; }
+.slider-track .video-embed { border: 1px solid var(--line); }
 .slider-arrow {
   position: absolute;
   top: 50%;
