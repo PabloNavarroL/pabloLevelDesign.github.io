@@ -43,131 +43,157 @@
 <section class="project-body">
   <div class="wrap">
     <div class="rail">
-      On this page<br><br>
-      01 — Summary<br>
-      02 — Concept<br>
-      03 — Structure<br>
-      04 — Area breakdown<br>
-      05 — Combat<br>
-      06 — Systems<br>
-      07 — Enemy AI<br>
-      08 — Narrative<br>
-      09 — Post-mortem
+      <div class="rail-title">On this page</div>
+      <nav class="rail-nav">
+        <a href="#summary">Summary</a>
+        <a href="#concept">Concept</a>
+        <a href="#structure">Structure</a>
+        <a href="#area-breakdown">Area breakdown</a>
+        <a href="#combat">Combat</a>
+        <a href="#systems">Systems</a>
+        <a href="#enemy-ai">Enemy AI</a>
+        <a href="#narrative">Narrative</a>
+        <a href="#final-encounter">Final encounter</a>
+        <a href="#collectibles">Collectibles</a>
+        <a href="#post-mortem">Post-mortem</a>
+      </nav>
     </div>
     <div class="prose">
 
-      <h2>Summary</h2>
-      <p>Players venture inside a hidden paranormal containment facility, searching for the source of its corruption. The level runs on a simple three-part loop: <strong>exploration</strong>, where the player investigates and finds clues about what happened there; <strong>reward</strong>, where a discovery opens a new area or exposes more narrative; and <strong>blocker</strong>, where a combat event or puzzle holds up progress until it's solved.</p>
+      <div class="framed" id="summary">
+        <h2>Summary</h2>
+        <p>Players venture inside a hidden paranormal containment facility, searching for the source of its corruption. The level runs on a simple three-part loop: <strong>exploration</strong>, where the player investigates and finds clues about what happened there; <strong>reward</strong>, where a discovery opens a new area or exposes more narrative; and <strong>blocker</strong>, where a combat event or puzzle holds up progress until it's solved.</p>
 
-      <div class="tag-list">
-        <span class="tag">Single Player</span>
-        <span class="tag">Third Person</span>
-        <span class="tag">10–15 min</span>
-        <span class="tag">PC — Gamepad Support</span>
+        <div class="tag-list">
+          <span class="tag">Single Player</span>
+          <span class="tag">Third Person</span>
+          <span class="tag">10–15 min</span>
+          <span class="tag">PC — Gamepad Support</span>
+        </div>
       </div>
 
-      <h2>Concept</h2>
-      <p>This was a solo technical project built to recreate elements of Remedy's 2019 game <em>Control</em> — specifically its environmental interactions and basic enemy behavior. The constraint was one month, both to ship something complete and to get properly familiar with Unreal Engine's tools. Level design and narrative weren't the primary focus, but the world still needed to be a place where those gameplay ingredients could live believably.</p>
-      <ul>
-        <li>Have working systems and gameplay, not just a pretty blockout.</li>
-        <li>Learn Unreal Engine more deeply by exploring its tools directly.</li>
-        <li>Develop a level with real narrative intent behind it.</li>
-        <li>Have fun with it.</li>
-      </ul>
-
-      <h2>Structure</h2>
-      <p>I followed a four-part pacing structure to give the level a rhythm — pacing is one of the aspects of level design I care most about, since it shapes the player's experience directly, not just the space around them.</p>
-      <div class="shot-grid">
-        <figure style="grid-column: span 2;">
-          <div class="callout" style="margin:0;">
-            <strong>Introduction</strong> — familiarize the player with controls, mechanics, and the narrative hook.<br><br>
-            <strong>Development</strong> — grow what the player already knows, layering in complexity and a twist on the mechanics while the narrative builds toward a high-intensity point.<br><br>
-            <strong>Twist</strong> — the highest-intensity beat, combat and narrative both. The player reaches the main goal but is handed a new challenge on top of it.<br><br>
-            <strong>Ending</strong> — a post-climax stretch that gradually lowers intensity and paces the player down to a narrative conclusion.
-          </div>
-        </figure>
+      <div class="framed" id="concept">
+        <h2>Concept</h2>
+        <p>This was a solo technical project built to recreate elements of Remedy's 2019 game <em>Control</em> — specifically its environmental interactions and basic enemy behavior. The constraint was one month, both to ship something complete and to get properly familiar with Unreal Engine's tools. Level design and narrative weren't the primary focus, but the world still needed to be a place where those gameplay ingredients could live believably.</p>
+        <ul>
+          <li>Have working systems and gameplay, not just a pretty blockout.</li>
+          <li>Learn Unreal Engine more deeply by exploring its tools directly.</li>
+          <li>Develop a level with real narrative intent behind it.</li>
+          <li>Have fun with it.</li>
+        </ul>
       </div>
 
-      <h2>Area breakdown</h2>
-      <p>Researching Brutalist architecture and gathering references was the first stop before blockout — its symmetry and repetition translated well into patterns that help depth perception and let the player build a mental map of the space.</p>
-
-      <h3 style="font-family:var(--f-display); font-size:19px; margin:28px 0 10px; color:var(--text);">The Gas Station</h3>
-      <p>The level opens in an open, explorable area — setting expectations and teaching the player how to approach the level, while giving them a first taste of the golden path without forcing it. It's big enough to hold secrets and hidden paths, but small enough that its structure and explorable spaces stay legible. The intent was to let the player explore, get used to the mechanics, interact with a few objects, and get curious enough to chase collectibles.</p>
-      <div class="shot-grid">
-        <figure>
-          <img src="../images/facility-gas-station.svg" alt="Gas Station overview, placeholder for real asset GasStationOverview.gif">
-          <figcaption>Gas Station overview</figcaption>
-        </figure>
-        <figure>
-          <img src="../images/facility-gas-station-transform.svg" alt="Gas Station transformation, placeholder for real asset GasStationTransformation.gif">
-          <figcaption>Gas Station — blockout transformation</figcaption>
-        </figure>
-      </div>
-      <div class="callout">When the player approaches the singing trout, it asks them to find a TV and place it nearby — no foundation personnel has given it its daily TV time. It's a small, silly detail, but narratively it's a chance to expand the world with a branching moment, so the space doesn't feel like one isolated event.</div>
-
-      <h3 style="font-family:var(--f-display); font-size:19px; margin:28px 0 10px; color:var(--text);">AWE Exposition Area</h3>
-      <p>This area presents the level's main goal, foreshadowing and teasing the space the player eventually has to reach. It's only accessible after solving a puzzle, and functions as a downbeat — a place to take in the narrative and hunt collectibles at a slower pace, incentivized enough that the player lingers for a few minutes.</p>
-      <p>Since the next major beat is a combat encounter, I placed a control point (save area) nearby as a safety net if the player fails or wants to come back later — and because it sits between two major areas, it also lets the player move between landmarks easily and avoid backtracking.</p>
-
-      <h2>Combat</h2>
-      <p>The goal was to keep the player moving — either by pinching them between enemies, or by giving them a clear line of sight or better cover to fight from. For flying enemies specifically, the area has a double-height space so players can reach their altitude and deal with them more efficiently, instead of fighting straight upward the whole time.</p>
-      <p>Ground enemies needed a constant flow of pressure — opening opportunities, then closing them and cutting sightlines, so the encounter couldn't collapse into the player camping one spot or finding a single-location solution.</p>
-
-      <h2>Systems — power core &amp; door scripting</h2>
-      <p>The project's base came from a Game Dev Pantry breakdown of <em>Control's</em> telekinesis, which I reverse-engineered further to add an interaction system and gun shooting on top. Doors act as the obvious blockers preventing progress, which is why I focused the interaction system around them.</p>
-      <p>Building one shared interaction system as the core — used across collectibles, throwables, power cores, and doors — saved a lot of time versus writing separate scripts for each, and meant everything could connect easily: a collectible pickup can open a door, a power core can spawn a collectible, and so on.</p>
-      <div class="callout">Using power cores to unlock doors touches all three pillars I set at the start of the project — it's fun on its own, it engages directly with the telekinesis mechanic, and pairing it with a locked door forces exploration rather than letting the player brute-force past it.</div>
-      <div class="shot-grid">
-        <figure>
-          <img src="../images/facility-power-core.svg" alt="Power Core test, placeholder for real asset PowerCoreTest.gif">
-          <figcaption>Power core interaction test</figcaption>
-        </figure>
-        <figure>
-          <img src="../images/facility-exec-office.svg" alt="Executive Office area, placeholder for real assets ExecOffice.gif / ExecOverview.gif">
-          <figcaption>Executive Office — area overview</figcaption>
-        </figure>
+      <div class="framed" id="structure">
+        <h2>Structure</h2>
+        <p>I followed a four-part pacing structure to give the level a rhythm — pacing is one of the aspects of level design I care most about, since it shapes the player's experience directly, not just the space around them.</p>
+        <div class="shot-grid">
+          <figure style="grid-column: span 2;">
+            <div class="callout" style="margin:0;">
+              <strong>Introduction</strong> — familiarize the player with controls, mechanics, and the narrative hook.<br><br>
+              <strong>Development</strong> — grow what the player already knows, layering in complexity and a twist on the mechanics while the narrative builds toward a high-intensity point.<br><br>
+              <strong>Twist</strong> — the highest-intensity beat, combat and narrative both. The player reaches the main goal but is handed a new challenge on top of it.<br><br>
+              <strong>Ending</strong> — a post-climax stretch that gradually lowers intensity and paces the player down to a narrative conclusion.
+            </div>
+          </figure>
+        </div>
       </div>
 
-      <h2>Enemy AI</h2>
-      <p>Tackling AI felt intimidating at first, so I broke it into parts and focused on the piece I could get the most out of: enemy positioning. In <em>Control</em>, enemies spread out and use the space to promote player movement — that behavior was what I wanted to recreate.</p>
-      <p>After digging into the documentation, Unreal's environment query system looked like the best fit for the time I had. It takes the player's position as a reference point, draws nine spheres around the enemy, and reads the surrounding terrain for cover opportunities based on asset height. That was enough to approximate <em>Control's</em> smarter enemy behavior. I also built a flying-enemy placeholder to represent enemy variation, with spawning handled through trigger volumes and defined spawn locations — a random number of ground enemies per trigger, while flying enemies were always placed manually in the editor.</p>
-      <div class="shot-grid full">
-        <figure>
-          <img src="../images/facility-node-network.svg" alt="AI query node network, placeholder for real asset NodeNetwork.png">
-          <figcaption>Environment query system — node network</figcaption>
-        </figure>
+      <div class="framed" id="area-breakdown">
+        <h2>Area breakdown</h2>
+        <p>Researching Brutalist architecture and gathering references was the first stop before blockout — its symmetry and repetition translated well into patterns that help depth perception and let the player build a mental map of the space.</p>
+
+        <h3 style="font-family:var(--f-display); font-size:19px; margin:28px 0 10px; color:var(--text);">The Gas Station</h3>
+        <p>The level opens in an open, explorable area — setting expectations and teaching the player how to approach the level, while giving them a first taste of the golden path without forcing it. It's big enough to hold secrets and hidden paths, but small enough that its structure and explorable spaces stay legible. The intent was to let the player explore, get used to the mechanics, interact with a few objects, and get curious enough to chase collectibles.</p>
+        <div class="shot-grid">
+          <figure>
+            <img src="../images/facility-gas-station.svg" alt="Gas Station overview, placeholder for real asset GasStationOverview.gif">
+            <figcaption>Gas Station overview</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/facility-gas-station-transform.svg" alt="Gas Station transformation, placeholder for real asset GasStationTransformation.gif">
+            <figcaption>Gas Station — blockout transformation</figcaption>
+          </figure>
+        </div>
+        <div class="callout">When the player approaches the singing trout, it asks them to find a TV and place it nearby — no foundation personnel has given it its daily TV time. It's a small, silly detail, but narratively it's a chance to expand the world with a branching moment, so the space doesn't feel like one isolated event.</div>
+
+        <h3 style="font-family:var(--f-display); font-size:19px; margin:28px 0 10px; color:var(--text);">AWE Exposition Area</h3>
+        <p>This area presents the level's main goal, foreshadowing and teasing the space the player eventually has to reach. It's only accessible after solving a puzzle, and functions as a downbeat — a place to take in the narrative and hunt collectibles at a slower pace, incentivized enough that the player lingers for a few minutes.</p>
+        <p>Since the next major beat is a combat encounter, I placed a control point (save area) nearby as a safety net if the player fails or wants to come back later — and because it sits between two major areas, it also lets the player move between landmarks easily and avoid backtracking.</p>
       </div>
 
-      <h2>Narrative — the containment hub</h2>
-      <p>This area answers the question of how the level fits into a larger project with other branches — a hub-like space with room to branch outward, plus another save location and a connection to an easter egg / side quest for this shorter-scale build.</p>
-      <p>From there I went back to the narrative and made sure every area had a reason to exist, asking: how would the Bureau exploit this entity for its own advantage? What would a supernatural office actually require, and how does that map onto a real one? That led me to a list — archives, a containment facility — which I matched back against references. The Archive sector in <em>Control</em> was a heavy influence here, specifically how condensed the offices feel and how the space is presented.</p>
-      <p>Along the way, I also stepped outside the main design work to write, design, and voice-act a short "side quest" moment for the player myself. Smaller beats like that — ones with humor, or that shift the overall structure for a moment — tend to be the most memorable, and they're worth the detour. As developers, we should be having fun with what we're making too.</p>
-
-      <h2>AWE Containment Facility — the final encounter</h2>
-      <p>This section was actually built quite early, despite its position at the end of the level, because of how it anchors the pacing. It's meant to be the final encounter and the highest-intensity point in the level, hitting a high note right before the cool-down.</p>
-      <div class="callout">I don't think I fully landed this one. If I revisited it, I'd start by building an area better suited for combat and add a twist — protecting a specific point, or another objective layered on top — to really separate this encounter from the ones before it.</div>
-      <p>After the player reaches the main goal, a cool-down stretch follows that doubles as narrative exposition and a reward for getting there.</p>
-
-      <h2>Collectibles</h2>
-      <p>Collectibles are scattered across key locations on the map, giving the player extra information about the environment and a bit of background on the narrative's elements — small, optional context rather than mandatory reading.</p>
-      <div class="shot-grid">
-        <figure>
-          <img src="../images/facility-iteration.svg" alt="Blockout iteration, placeholder for real asset IterationGIF.gif">
-          <figcaption>Blockout iteration pass</figcaption>
-        </figure>
-        <figure>
-          <img src="../images/facility-thumb.svg" alt="Additional collectible screenshot placeholder">
-          <figcaption class="needs-edit">[Additional collectible/area screenshot — swap in real capture]</figcaption>
-        </figure>
+      <div class="framed" id="combat">
+        <h2>Combat</h2>
+        <p>The goal was to keep the player moving — either by pinching them between enemies, or by giving them a clear line of sight or better cover to fight from. For flying enemies specifically, the area has a double-height space so players can reach their altitude and deal with them more efficiently, instead of fighting straight upward the whole time.</p>
+        <p>Ground enemies needed a constant flow of pressure — opening opportunities, then closing them and cutting sightlines, so the encounter couldn't collapse into the player camping one spot or finding a single-location solution.</p>
       </div>
 
-      <h2>Closing thoughts and post-mortem</h2>
-      <p>This ended up being a fairly dense level, with a lot of smaller interconnected rooms — and I like that density, since it came from designing for the actual function of each space rather than filling area for its own sake. There are still a few things I'd revisit:</p>
-      <ul>
-        <li>Polish the pacing further, and build a stronger sense of ramping intensity between beats — especially making that final encounter hit harder and feel more engaging.</li>
-        <li>Add more breathing room between some connected spaces so they don't feel cramped on top of each other — particularly right before the first combat encounter and the first power-core puzzle.</li>
-      </ul>
-      <p><em>Control</em> has been a huge influence on my work as a level designer, and finally getting to explore a level directly tied to that world was a genuinely fun experience. Thanks for reading.</p>
+      <div class="framed" id="systems">
+        <h2>Systems — power core &amp; door scripting</h2>
+        <p>The project's base came from a Game Dev Pantry breakdown of <em>Control's</em> telekinesis, which I reverse-engineered further to add an interaction system and gun shooting on top. Doors act as the obvious blockers preventing progress, which is why I focused the interaction system around them.</p>
+        <p>Building one shared interaction system as the core — used across collectibles, throwables, power cores, and doors — saved a lot of time versus writing separate scripts for each, and meant everything could connect easily: a collectible pickup can open a door, a power core can spawn a collectible, and so on.</p>
+        <div class="callout">Using power cores to unlock doors touches all three pillars I set at the start of the project — it's fun on its own, it engages directly with the telekinesis mechanic, and pairing it with a locked door forces exploration rather than letting the player brute-force past it.</div>
+        <div class="shot-grid">
+          <figure>
+            <img src="../images/facility-power-core.svg" alt="Power Core test, placeholder for real asset PowerCoreTest.gif">
+            <figcaption>Power core interaction test</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/facility-exec-office.svg" alt="Executive Office area, placeholder for real assets ExecOffice.gif / ExecOverview.gif">
+            <figcaption>Executive Office — area overview</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="framed" id="enemy-ai">
+        <h2>Enemy AI</h2>
+        <p>Tackling AI felt intimidating at first, so I broke it into parts and focused on the piece I could get the most out of: enemy positioning. In <em>Control</em>, enemies spread out and use the space to promote player movement — that behavior was what I wanted to recreate.</p>
+        <p>After digging into the documentation, Unreal's environment query system looked like the best fit for the time I had. It takes the player's position as a reference point, draws nine spheres around the enemy, and reads the surrounding terrain for cover opportunities based on asset height. That was enough to approximate <em>Control's</em> smarter enemy behavior. I also built a flying-enemy placeholder to represent enemy variation, with spawning handled through trigger volumes and defined spawn locations — a random number of ground enemies per trigger, while flying enemies were always placed manually in the editor.</p>
+        <div class="shot-grid full">
+          <figure>
+            <img src="../images/facility-node-network.svg" alt="AI query node network, placeholder for real asset NodeNetwork.png">
+            <figcaption>Environment query system — node network</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="framed" id="narrative">
+        <h2>Narrative — the containment hub</h2>
+        <p>This area answers the question of how the level fits into a larger project with other branches — a hub-like space with room to branch outward, plus another save location and a connection to an easter egg / side quest for this shorter-scale build.</p>
+        <p>From there I went back to the narrative and made sure every area had a reason to exist, asking: how would the Bureau exploit this entity for its own advantage? What would a supernatural office actually require, and how does that map onto a real one? That led me to a list — archives, a containment facility — which I matched back against references. The Archive sector in <em>Control</em> was a heavy influence here, specifically how condensed the offices feel and how the space is presented.</p>
+        <p>Along the way, I also stepped outside the main design work to write, design, and voice-act a short "side quest" moment for the player myself. Smaller beats like that — ones with humor, or that shift the overall structure for a moment — tend to be the most memorable, and they're worth the detour. As developers, we should be having fun with what we're making too.</p>
+      </div>
+
+      <div class="framed" id="final-encounter">
+        <h2>AWE Containment Facility — the final encounter</h2>
+        <p>This section was actually built quite early, despite its position at the end of the level, because of how it anchors the pacing. It's meant to be the final encounter and the highest-intensity point in the level, hitting a high note right before the cool-down.</p>
+        <div class="callout">I don't think I fully landed this one. If I revisited it, I'd start by building an area better suited for combat and add a twist — protecting a specific point, or another objective layered on top — to really separate this encounter from the ones before it.</div>
+        <p>After the player reaches the main goal, a cool-down stretch follows that doubles as narrative exposition and a reward for getting there.</p>
+      </div>
+
+      <div class="framed" id="collectibles">
+        <h2>Collectibles</h2>
+        <p>Collectibles are scattered across key locations on the map, giving the player extra information about the environment and a bit of background on the narrative's elements — small, optional context rather than mandatory reading.</p>
+        <div class="shot-grid">
+          <figure>
+            <img src="../images/facility-iteration.svg" alt="Blockout iteration, placeholder for real asset IterationGIF.gif">
+            <figcaption>Blockout iteration pass</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/facility-thumb.svg" alt="Additional collectible screenshot placeholder">
+            <figcaption class="needs-edit">[Additional collectible/area screenshot — swap in real capture]</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="framed" id="post-mortem">
+        <h2>Closing thoughts and post-mortem</h2>
+        <p>This ended up being a fairly dense level, with a lot of smaller interconnected rooms — and I like that density, since it came from designing for the actual function of each space rather than filling area for its own sake. There are still a few things I'd revisit:</p>
+        <ul>
+          <li>Polish the pacing further, and build a stronger sense of ramping intensity between beats — especially making that final encounter hit harder and feel more engaging.</li>
+          <li>Add more breathing room between some connected spaces so they don't feel cramped on top of each other — particularly right before the first combat encounter and the first power-core puzzle.</li>
+        </ul>
+        <p><em>Control</em> has been a huge influence on my work as a level designer, and finally getting to explore a level directly tied to that world was a genuinely fun experience. Thanks for reading.</p>
+      </div>
 
     </div>
   </div>
