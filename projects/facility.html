@@ -47,11 +47,11 @@
       <nav class="rail-nav">
         <a href="#summary">Summary</a>
         <a href="#concept">Concept</a>
+        <a href="#systems">Systems</a>
+        <a href="#enemy-ai">Enemy AI</a>
         <a href="#structure">Structure</a>
         <a href="#area-breakdown">Area breakdown</a>
         <a href="#combat">Combat</a>
-        <a href="#systems">Systems</a>
-        <a href="#enemy-ai">Enemy AI</a>
         <a href="#narrative">Narrative</a>
         <a href="#final-encounter">Final encounter</a>
         <a href="#collectibles">Collectibles</a>
@@ -81,6 +81,35 @@
           <li>Develop a level with real narrative intent behind it.</li>
           <li>Have fun with it.</li>
         </ul>
+      </div>
+
+      <div class="framed" id="systems">
+        <h2>Systems — power core &amp; door scripting</h2>
+        <p>The project's base came from a Game Dev Pantry breakdown of <em>Control's</em> telekinesis, which I reverse-engineered further to add an interaction system and gun shooting on top. Doors act as the obvious blockers preventing progress, which is why I focused the interaction system around them.</p>
+        <p>Building one shared interaction system as the core — used across collectibles, throwables, power cores, and doors — saved a lot of time versus writing separate scripts for each, and meant everything could connect easily: a collectible pickup can open a door, a power core can spawn a collectible, and so on.</p>
+        <div class="callout">Using power cores to unlock doors touches all three pillars I set at the start of the project — it's fun on its own, it engages directly with the telekinesis mechanic, and pairing it with a locked door forces exploration rather than letting the player brute-force past it.</div>
+        <div class="shot-grid">
+          <figure>
+            <img src="../images/facility/facility-power-core.svg" alt="Power Core test, placeholder for real asset PowerCoreTest.gif">
+            <figcaption>Power core interaction test</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/facility/facility-exec-office.svg" alt="Executive Office area, placeholder for real assets ExecOffice.gif / ExecOverview.gif">
+            <figcaption>Executive Office — area overview</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="framed" id="enemy-ai">
+        <h2>Enemy AI</h2>
+        <p>Tackling AI felt intimidating at first, so I broke it into parts and focused on the piece I could get the most out of: enemy positioning. In <em>Control</em>, enemies spread out and use the space to promote player movement — that behavior was what I wanted to recreate.</p>
+        <p>After digging into the documentation, Unreal's environment query system looked like the best fit for the time I had. It takes the player's position as a reference point, draws nine spheres around the enemy, and reads the surrounding terrain for cover opportunities based on asset height. That was enough to approximate <em>Control's</em> smarter enemy behavior. I also built a flying-enemy placeholder to represent enemy variation, with spawning handled through trigger volumes and defined spawn locations — a random number of ground enemies per trigger, while flying enemies were always placed manually in the editor.</p>
+        <div class="shot-grid full">
+          <figure>
+            <img src="../images/facility/facility-node-network.svg" alt="AI query node network, placeholder for real asset NodeNetwork.png">
+            <figcaption>Environment query system — node network</figcaption>
+          </figure>
+        </div>
       </div>
 
       <div class="framed" id="structure">
@@ -128,35 +157,6 @@
         <h2>Combat</h2>
         <p>The goal was to keep the player moving — either by pinching them between enemies, or by giving them a clear line of sight or better cover to fight from. For flying enemies specifically, the area has a double-height space so players can reach their altitude and deal with them more efficiently, instead of fighting straight upward the whole time.</p>
         <p>Ground enemies needed a constant flow of pressure — opening opportunities, then closing them and cutting sightlines, so the encounter couldn't collapse into the player camping one spot or finding a single-location solution.</p>
-      </div>
-
-      <div class="framed" id="systems">
-        <h2>Systems — power core &amp; door scripting</h2>
-        <p>The project's base came from a Game Dev Pantry breakdown of <em>Control's</em> telekinesis, which I reverse-engineered further to add an interaction system and gun shooting on top. Doors act as the obvious blockers preventing progress, which is why I focused the interaction system around them.</p>
-        <p>Building one shared interaction system as the core — used across collectibles, throwables, power cores, and doors — saved a lot of time versus writing separate scripts for each, and meant everything could connect easily: a collectible pickup can open a door, a power core can spawn a collectible, and so on.</p>
-        <div class="callout">Using power cores to unlock doors touches all three pillars I set at the start of the project — it's fun on its own, it engages directly with the telekinesis mechanic, and pairing it with a locked door forces exploration rather than letting the player brute-force past it.</div>
-        <div class="shot-grid">
-          <figure>
-            <img src="../images/facility/facility-power-core.svg" alt="Power Core test, placeholder for real asset PowerCoreTest.gif">
-            <figcaption>Power core interaction test</figcaption>
-          </figure>
-          <figure>
-            <img src="../images/facility/facility-exec-office.svg" alt="Executive Office area, placeholder for real assets ExecOffice.gif / ExecOverview.gif">
-            <figcaption>Executive Office — area overview</figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <div class="framed" id="enemy-ai">
-        <h2>Enemy AI</h2>
-        <p>Tackling AI felt intimidating at first, so I broke it into parts and focused on the piece I could get the most out of: enemy positioning. In <em>Control</em>, enemies spread out and use the space to promote player movement — that behavior was what I wanted to recreate.</p>
-        <p>After digging into the documentation, Unreal's environment query system looked like the best fit for the time I had. It takes the player's position as a reference point, draws nine spheres around the enemy, and reads the surrounding terrain for cover opportunities based on asset height. That was enough to approximate <em>Control's</em> smarter enemy behavior. I also built a flying-enemy placeholder to represent enemy variation, with spawning handled through trigger volumes and defined spawn locations — a random number of ground enemies per trigger, while flying enemies were always placed manually in the editor.</p>
-        <div class="shot-grid full">
-          <figure>
-            <img src="../images/facility/facility-node-network.svg" alt="AI query node network, placeholder for real asset NodeNetwork.png">
-            <figcaption>Environment query system — node network</figcaption>
-          </figure>
-        </div>
       </div>
 
       <div class="framed" id="narrative">
