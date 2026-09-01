@@ -717,6 +717,7 @@ figcaption, .caption {
 }
 .slider-track img { width: 100%; border: 1px solid var(--line); display: block; }
 .slider-track .video-embed { border: 1px solid var(--line); }
+.slider-track video { width: 100%; aspect-ratio: 16/9; border: 1px solid var(--line); display: block; background: #000; }
 .slider-arrow {
   position: absolute;
   top: 50%;

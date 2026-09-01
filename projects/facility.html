@@ -88,11 +88,28 @@
         <p>The project's base came from a Game Dev Pantry breakdown of <em>Control's</em> telekinesis, which I reverse-engineered further to add an interaction system and gun shooting on top. Doors act as the obvious blockers preventing progress, which is why I focused the interaction system around them.</p>
         <p>Building one shared interaction system as the core — used across collectibles, throwables, power cores, and doors — saved a lot of time versus writing separate scripts for each, and meant everything could connect easily: a collectible pickup can open a door, a power core can spawn a collectible, and so on.</p>
         <div class="callout">Using power cores to unlock doors touches all three pillars I set at the start of the project — it's fun on its own, it engages directly with the telekinesis mechanic, and pairing it with a locked door forces exploration rather than letting the player brute-force past it.</div>
+
+        <div class="slider" data-slider>
+          <div class="slider-track" data-slider-track>
+            <figure class="slide">
+              <video src="../images/facility/facility-teleprop-test.mp4" controls muted loop playsinline></video>
+              <figcaption>Telekinesis prop test</figcaption>
+            </figure>
+            <figure class="slide">
+              <video src="../images/facility/facility-teleprop-test2.mp4" controls muted loop playsinline></video>
+              <figcaption>Telekinesis prop test — second pass</figcaption>
+            </figure>
+            <figure class="slide">
+              <video src="../images/facility/facility-power-core-bp.mp4" controls muted loop playsinline></video>
+              <figcaption>Power core interaction — blueprint test</figcaption>
+            </figure>
+          </div>
+          <button class="slider-arrow prev" type="button" aria-label="Previous video" data-slider-prev>‹</button>
+          <button class="slider-arrow next" type="button" aria-label="Next video" data-slider-next>›</button>
+          <div class="slider-dots" data-slider-dots></div>
+        </div>
+
         <div class="shot-grid">
-          <figure>
-            <img src="../images/facility/facility-power-core.svg" alt="Power Core test, placeholder for real asset PowerCoreTest.gif">
-            <figcaption>Power core interaction test</figcaption>
-          </figure>
           <figure>
             <img src="../images/facility/facility-exec-office.svg" alt="Executive Office area, placeholder for real assets ExecOffice.gif / ExecOverview.gif">
             <figcaption>Executive Office — area overview</figcaption>
