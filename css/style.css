@@ -541,7 +541,7 @@ p:last-child { margin-bottom: 0; }
   overflow: hidden;
   position: relative;
 }
-.hero-media img { width: 100%; height: 100%; object-fit: cover; }
+.hero-media img, .hero-media > video { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .project-body {
   padding: 72px 0;
