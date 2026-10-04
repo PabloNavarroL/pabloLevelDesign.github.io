@@ -828,4 +828,6 @@ figcaption, .caption {
 @media (max-width: 600px) { .timeline .entry { grid-template-columns: 1fr; gap: 6px; } }
 .timeline .yr { font-family: var(--f-mono); font-size: 12px; color: var(--accent); letter-spacing: 0.08em; }
 .timeline h4 { font-size: 17px; margin-bottom: 6px; }
+/* Visual flair only: same dashed square outline as .needs-edit, but not a reminder. */
+.timeline .yr, .timeline h4 { width: fit-content; outline: 1px dashed var(--accent-dim); outline-offset: 6px; }
 .timeline p { font-size: 14.5px; }
