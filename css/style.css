@@ -155,6 +155,8 @@ p:last-child { margin-bottom: 0; }
   transition: color 0.15s ease;
 }
 .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--text); }
+.nav-links a.nav-cv { color: var(--accent); }
+.nav-links a.nav-cv:hover { color: var(--text); }
 .nav-links a[aria-current="page"]::after {
   content: "";
   position: absolute;
