@@ -813,9 +813,9 @@ figcaption, .caption {
   font-size: 13.5px;
 }
 .favorites-list li { list-style: none; padding: 8px 0; border-bottom: 1px solid var(--line); color: var(--text-muted); display: flex; align-items: center; gap: 14px; }
-.favorites-list .game-icon { width: 32px; height: 45px; object-fit: cover; border: 1px solid var(--line-strong); flex: none; }
+.favorites-list .game-icon { width: 48px; height: 68px; object-fit: cover; border: 1px solid var(--line-strong); flex: none; }
 .favorites-list li span { outline: 1px dashed var(--accent-dim); outline-offset: 6px; margin: 0 6px; }
-@media (max-width: 900px) { .favorites-list { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 1000px) { .favorites-list { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .favorites-list { grid-template-columns: 1fr; } }
 
 .timeline {
