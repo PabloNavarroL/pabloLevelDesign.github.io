@@ -245,13 +245,6 @@ p:last-child { margin-bottom: 0; }
   flex-wrap: wrap;
 }
 .section-head h2 { font-size: clamp(28px, 4vw, 38px); }
-.section-head .count {
-  font-family: var(--f-mono);
-  font-size: 12px;
-  color: var(--text-faint);
-  letter-spacing: 0.08em;
-}
-
 /* ---------------------------------------------------------
    LEVEL-SELECT PROJECT GRID
    --------------------------------------------------------- */
