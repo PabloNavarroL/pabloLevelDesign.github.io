@@ -631,6 +631,12 @@ h3[id] { scroll-margin-top: 150px; }
 .framed h2:first-child { margin-top: 0; }
 @media (max-width: 560px) { .framed { padding: 28px 24px; } }
 
+/* Media on the left, text on the right; stacks on narrower screens. */
+.project-split { display: grid; grid-template-columns: 1.15fr 1fr; gap: 36px; align-items: start; }
+.project-split .video-embed { border: 1px solid var(--line); }
+.project-split .project-text p:first-child { margin-top: 0; }
+@media (max-width: 1100px) { .project-split { grid-template-columns: 1fr; gap: 24px; } }
+
 .framed.centered { text-align: center; }
 .framed.centered ul {
   list-style-position: outside;
